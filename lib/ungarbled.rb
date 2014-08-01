@@ -5,15 +5,19 @@ module Ungarbled
   class Encoder
     def initialize(browser, options = {})
       @browser = browser
-      @locale = options.delete(:locale)
       @options = options
-      begin
-        @delegate = "::Ungarbled::Encoders::#{@locale.classify}"
-                    .constantize.send(:new, browser, options)
-      rescue NameError
-        raise NotImplementedError,
-              "Encoder #{@locale.classify} is not implemented"
-      end
+      self.locale = options.delete(:locale) || 'base'
+    end
+
+    attr_accessor :locale
+
+    def locale=(locale)
+      @delegate = "::Ungarbled::Encoders::#{locale.classify}"
+                  .constantize.send(:new, @browser, @options)
+      @locale = locale
+    rescue NameError
+      raise NotImplementedError,
+            "Encoder #{locale.classify} is not implemented"
     end
 
     def method_missing(name, *args)
