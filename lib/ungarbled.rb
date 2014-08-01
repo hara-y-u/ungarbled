@@ -1,20 +1,19 @@
-require 'active_support/core_ext/string/inflections'
-require 'erb'
-
 module Ungarbled
   class Encoder
+    require 'active_support/core_ext/string/inflections'
+
     def initialize(browser, options = {})
       @browser = browser
       @options = options
-      self.locale = options.delete(:locale) || 'base'
+      self.locale = options.delete(:locale) || :base
     end
 
     attr_accessor :locale
 
     def locale=(locale)
-      @delegate = "::Ungarbled::Encoders::#{locale.classify}"
+      @delegate = "::Ungarbled::Encoders::#{locale.to_s.classify}"
                   .constantize.send(:new, @browser, @options)
-      @locale = locale
+      @locale = locale.to_sym
     rescue NameError
       raise NotImplementedError,
             "Encoder #{locale.classify} is not implemented"
@@ -40,6 +39,8 @@ module Ungarbled
       end
     end
     class Japanese < Base
+      require 'erb'
+
       def encode(filename)
         if @browser.ie?
           ::ERB::Util.url_encode(filename)
