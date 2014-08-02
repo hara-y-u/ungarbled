@@ -1,5 +1,6 @@
 require 'test_helper'
 require 'browser'
+require 'ungarbled/encoder'
 
 class TestEncoder < MiniTest::Unit::TestCase
   def setup
