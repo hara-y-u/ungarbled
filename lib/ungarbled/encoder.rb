@@ -1,4 +1,4 @@
-Dir[File.expand_path('../encoders', __FILE__) << '/*.rb'].each do |file|
+Dir[File.expand_path('../encoder', __FILE__) << '/*.rb'].each do |file|
   require file
 end
 
@@ -15,7 +15,7 @@ module Ungarbled
     attr_accessor :language, :delegate
 
     def language=(language)
-      @delegate = "::Ungarbled::Encoders::#{language.to_s.classify}"
+      @delegate = "::Ungarbled::Encoder::#{language.to_s.classify}"
                   .constantize.send(:new, @browser, @options)
       @language = language.to_sym
     rescue NameError

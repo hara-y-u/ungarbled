@@ -1,5 +1,5 @@
 module Ungarbled
-  module Encoders
+  class Encoder
     class Japanese < Base
       require 'erb'
 

@@ -11,7 +11,7 @@ class EncoderTest < MiniTest::Test
     assert_respond_to encoder, :language
     assert_respond_to encoder, :language=
     assert_respond_to encoder, :delegate
-    assert_kind_of Ungarbled::Encoders::Japanese, encoder.delegate
+    assert_kind_of Ungarbled::Encoder::Japanese, encoder.delegate
   end
 
   def test_initialize_method_fails_with_unimplemented_language
@@ -22,8 +22,8 @@ class EncoderTest < MiniTest::Test
 
   def test_set_language
     encoder = Ungarbled::Encoder.new(@browser, language: 'japanese')
-    assert_kind_of Ungarbled::Encoders::Japanese, encoder.delegate
+    assert_kind_of Ungarbled::Encoder::Japanese, encoder.delegate
     encoder.language = 'base'
-    assert_kind_of Ungarbled::Encoders::Base, encoder.delegate
+    assert_kind_of Ungarbled::Encoder::Base, encoder.delegate
   end
 end

@@ -1,5 +1,5 @@
 module Ungarbled
-  module Encoders
+  class Encoder
     class Base
       def initialize(browser, options = {})
         @browser = browser
