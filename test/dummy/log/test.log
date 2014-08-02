@@ -192,3 +192,57 @@ Completed 200 OK in 0ms (Views: 0.1ms)
 --------------------------
 RailtieTest: test_included
 --------------------------
+-----------------------------------
+RailtieTest: test_changing_language
+-----------------------------------
+Started GET "/download_with_changing_language" for 127.0.0.1 at 2014-08-02 16:30:53 +0900
+Processing by FilesController#download_with_changing_language as HTML
+  Rendered text template (0.0ms)
+Sent data 日本語ファイル名.txt (3.7ms)
+Completed 200 OK in 4ms (Views: 3.7ms)
+--------------------------------------
+RailtieTest: test_filename_with_encode
+--------------------------------------
+Started GET "/download_with_encode_filename" for 127.0.0.1 at 2014-08-02 16:30:53 +0900
+Processing by FilesController#download_with_encode_filename as HTML
+  Rendered text template (0.0ms)
+Sent data %E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%90%8D.txt (0.2ms)
+Completed 200 OK in 0ms (Views: 0.2ms)
+-----------------------------------------
+RailtieTest: test_filename_without_encode
+-----------------------------------------
+Started GET "/download_with_encode_filename" for 127.0.0.1 at 2014-08-02 16:30:53 +0900
+Processing by FilesController#download_with_encode_filename as HTML
+  Rendered text template (0.0ms)
+Sent data 日本語ファイル名.txt (0.2ms)
+Completed 200 OK in 0ms (Views: 0.1ms)
+--------------------------
+RailtieTest: test_included
+--------------------------
+-----------------------------------
+RailtieTest: test_changing_language
+-----------------------------------
+Started GET "/download_with_changing_language" for 127.0.0.1 at 2014-08-02 16:31:10 +0900
+Processing by FilesController#download_with_changing_language as HTML
+  Rendered text template (0.0ms)
+Sent data %E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%90%8D.txt (3.7ms)
+Completed 200 OK in 4ms (Views: 3.7ms)
+--------------------------------------
+RailtieTest: test_filename_with_encode
+--------------------------------------
+Started GET "/download_with_encode_filename" for 127.0.0.1 at 2014-08-02 16:31:10 +0900
+Processing by FilesController#download_with_encode_filename as HTML
+  Rendered text template (0.0ms)
+Sent data %E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%90%8D.txt (0.2ms)
+Completed 200 OK in 1ms (Views: 0.2ms)
+-----------------------------------------
+RailtieTest: test_filename_without_encode
+-----------------------------------------
+Started GET "/download_with_encode_filename" for 127.0.0.1 at 2014-08-02 16:31:10 +0900
+Processing by FilesController#download_with_encode_filename as HTML
+  Rendered text template (0.0ms)
+Sent data 日本語ファイル名.txt (0.2ms)
+Completed 200 OK in 0ms (Views: 0.2ms)
+--------------------------
+RailtieTest: test_included
+--------------------------
