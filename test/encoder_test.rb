@@ -26,5 +26,4 @@ class EncoderTest < MiniTest::Test
     encoder.language = 'base'
     assert_kind_of Ungarbled::Encoders::Base, encoder.delegate
   end
-
 end
