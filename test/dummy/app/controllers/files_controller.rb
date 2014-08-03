@@ -7,6 +7,12 @@ class FilesController < ApplicationController
               disposition: 'attachment'
   end
 
+  def download_without_lang_specified
+    send_data 'abcde',
+              filename: encode_filename('日本語ファイル名.txt'),
+              disposition: 'attachment'
+  end
+
   def download_with_changing_lang
     filename = encode_filename('日本語ファイル名.txt',
                                lang: :japanese
