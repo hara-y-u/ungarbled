@@ -3,3 +3,4 @@ log/*.log
 pkg/
 Gemfile.lock
 /test/dummy/log/test.log
+/ungarbled-*.gem
