@@ -9,18 +9,18 @@ module Ungarbled
     def initialize(browser, options = {})
       @browser = browser
       @options = options
-      self.language = options.delete(:language) || :base
+      self.lang = options.delete(:lang) || :base
     end
 
-    attr_accessor :language, :delegate
+    attr_accessor :lang, :delegate
 
-    def language=(language)
-      @delegate = "::Ungarbled::Encoder::#{language.to_s.classify}"
+    def lang=(lang)
+      @delegate = "::Ungarbled::Encoder::#{lang.to_s.classify}"
                   .constantize.send(:new, @browser, @options)
-      @language = language.to_sym
+      @lang = lang.to_sym
     rescue NameError
       raise NotImplementedError,
-            "Encoder #{language.to_s.classify} is not implemented"
+            "Encoder #{lang.to_s.classify} is not implemented"
     end
 
     def method_missing(name, *args)

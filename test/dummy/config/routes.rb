@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get 'download_with_encode_filename' =>
       'files#download_with_encode_filename'
-  get 'download_with_changing_language' =>
-      'files#download_with_changing_language'
+  get 'download_with_changing_lang' =>
+      'files#download_with_changing_lang'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

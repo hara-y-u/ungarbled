@@ -19,9 +19,9 @@ class RailtieTest < Capybara::Rails::TestCase
                     'filename="%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%90%8D.txt"'
   end
 
-  def test_changing_language
+  def test_changing_lang
     Capybara.current_driver = :ie7
-    visit download_with_changing_language_path
+    visit download_with_changing_lang_path
     assert_includes page.response_headers['Content-Disposition'],
                     'filename="日本語ファイル名.txt"'
   end

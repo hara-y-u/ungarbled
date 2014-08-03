@@ -15,9 +15,9 @@ module Ungarbled
 
     def filename_encoder(options)
       @filename_encoder ||= Ungarbled::Encoder.new(browser)
-      language = options[:language] ||
-                 Rails.configuration.ungarbled.default_language
-      @filename_encoder.tap { |e| e.language = language }
+      lang = options[:lang] ||
+                 Rails.configuration.ungarbled.default_lang
+      @filename_encoder.tap { |e| e.lang = lang }
     end
 
     def encode_filename(filename, options = {})
