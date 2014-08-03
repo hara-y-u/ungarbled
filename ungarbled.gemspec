@@ -18,12 +18,12 @@ Gem::Specification.new do |s|
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ['lib']
 
-  s.add_dependency 'browser', '~> 0.6.0'
+  s.add_dependency 'browser', '~> 0.6'
   s.add_dependency 'activesupport'
 
   s.add_development_dependency 'bundler', '>= 0'
   s.add_development_dependency 'rake'
-  s.add_development_dependency 'rails', '~> 4.1.1'
+  s.add_development_dependency 'rails', '~> 4'
   s.add_development_dependency 'rack-test'
   s.add_development_dependency 'pry-meta'
   s.add_development_dependency 'minitest-rails-capybara'
