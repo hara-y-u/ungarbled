@@ -15,7 +15,7 @@ module Ungarbled
         if @browser.windows? && !@browser.windows8?
           filename.encode('cp932', invalid: :replace)
         else
-          supe
+          super
         end
       end
     end
