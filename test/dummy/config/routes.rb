@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'download_with_encode_filename' =>
       'files#download_with_encode_filename'
+  get 'download_without_encode_filename' =>
+      'files#download_without_encode_filename'
   get 'download_without_lang_specified' =>
       'files#download_without_lang_specified'
   get 'download_with_changing_lang' =>
