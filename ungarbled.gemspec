@@ -18,6 +18,8 @@ Gem::Specification.new do |s|
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ['lib']
 
+  s.required_ruby_version = '~> 1.9'
+
   s.add_dependency 'browser', '~> 0.6'
   s.add_dependency 'activesupport'
 
