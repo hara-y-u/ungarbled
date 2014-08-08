@@ -6,13 +6,13 @@
 
 ## Rails ActionController integration
 
-Put below to Gemfile.
+Add below to Gemfile.
 
 ```ruby
 gem 'ungarbled'
 ```
 
-Configuration.
+Configuration:
 
 ```ruby
 # config/initializers/ungarbled.rb
@@ -35,6 +35,8 @@ end
 To encode Zip item filename, use `encode_filename_for_zip_item`.
 
 ```ruby
+# Example with rubyzip
+
 directory_to_zip = Rails.root.join('public', 'multibyte_name_files')
 zipfile_name = Rails.root.join('tmp', 'multibyte_name_files.zip')
 
@@ -51,13 +53,21 @@ end
 
 Rack Middleware parses response and encodes filename automatically.
 
-### Rails Setting
+### `config.ru`
+
+```ruby
+use Ungarbled::Middleware, lang: :japanese
+```
+
+### Rails
 
 ```ruby
 # config/initializers/ungarbled.rb
 
 Rails.configuration.middleware.use Ungarbled::Middleware, lang: :japanese
 ```
+
+## Extend Languages
 
 ## Contributing
 
