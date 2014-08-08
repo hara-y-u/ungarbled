@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ['yukihiro hara']
   s.email       = ['yukihr@gmail.com']
   s.homepage    = 'https://github.com/yukihr/ungarbled'
-  s.summary     = 'Ungarbled filenames for downloads.'
-  s.description = 'Ungarbled filenames for downloads with rails integration.'
+  s.summary     = 'Ungarble filename for downloads.'
+  s.description = 'Ungarble multibyte download filename on certain platform. Rails integration included.'
   s.license     = 'MIT'
 
   s.files = Dir['{app,config,db,lib}/**/*',
