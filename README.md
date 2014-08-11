@@ -1,4 +1,4 @@
-# Ungarbled [![Gem Version](https://badge.fury.io/rb/ungarbled.svg)](http://badge.fury.io/rb/ungarbled)
+# Ungarbled [![Gem Version](https://badge.fury.io/rb/ungarbled.svg)](http://badge.fury.io/rb/ungarbled) [![Build Status](https://api.shippable.com/projects/53e8bc2a00be167401ed2929/badge/master)](https://www.shippable.com/projects/53e8bc2a00be167401ed2929)
 
 ![ungarbled](./readme/readme.png)
 

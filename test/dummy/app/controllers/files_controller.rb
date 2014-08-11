@@ -1,3 +1,5 @@
+# -*- encoding: utf-8 -*-
+
 class FilesController < ApplicationController
   def download_with_encode_filename
     send_data 'abcde',
