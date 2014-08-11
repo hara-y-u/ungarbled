@@ -5,7 +5,7 @@ class MiddlewareTest < MiniTest::Test
   include Rack::Test::Methods
 
   def app
-    Ungarbled::Middleware.new(DummyRackApp.new, lang: :japanese)
+    Ungarbled::Middleware.new(DummyRackApp.new, lang: :ja)
   end
 
   def test_encoding_filename

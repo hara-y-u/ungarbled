@@ -1,6 +1,8 @@
+require_relative 'base'
+
 module Ungarbled
   class Encoder
-    class Japanese < Base
+    class Ja < Base
       require 'erb'
 
       def encode(filename)

@@ -18,7 +18,7 @@ Configuration:
 
 ```ruby
 # config/initializers/ungarbled.rb
-Rails.configuration.ungarbled.default_lang = :japanese
+Rails.configuration.ungarbled.default_lang = :ja
 ```
 
 Use `encode_filename` method within Controllers.
@@ -29,7 +29,7 @@ class FilesController < ApplicationController
     send_file Rails.root.join('public', 'files', '日本語ファイル名.txt'),
               filename: encode_filename('日本語ファイル名.txt')
     # Use "lang" option to override `default_lang` config
-    # encode_filename('日本語ファイル名.txt', lang: :japanese)
+    # encode_filename('日本語ファイル名.txt', lang: :ja)
   end
 end
 ```
@@ -61,7 +61,7 @@ _This does not encode zip items' filenames_
 ```ruby
 # `config.ru`
 
-use Ungarbled::Middleware, lang: :japanese
+use Ungarbled::Middleware, lang: :ja
 ```
 
 ### Rails
@@ -69,14 +69,14 @@ use Ungarbled::Middleware, lang: :japanese
 ```ruby
 # config/initializers/ungarbled.rb
 
-Rails.configuration.middleware.use Ungarbled::Middleware, lang: :japanese
+Rails.configuration.middleware.use Ungarbled::Middleware, lang: :ja
 ```
 
 ## Extend Languages
 
 `ungarbled` authors are Japanese native, so not sure about other languages. But if you want ungarble objective download filenames in your language, please help us extending supporting language. Pull Requests are always welcome!
 
-Please see `lib/ungarbled/encoder/japanese.rb` for reference, and just add encoder file in the same directory. You can use [Browser](https://github.com/fnando/browser) instance with `@browser` for browser/platform detection. Test is also required to be added to `test/encoder/yourlanguage_test.rb`
+Please see `lib/ungarbled/encoder/ja.rb` for reference, and just add encoder file in the same directory. You can use [Browser](https://github.com/fnando/browser) instance with `@browser` for browser/platform detection. Test is also required to be added to `test/encoder/yourlanguage_test.rb`
 
 ## Future Plan
 

@@ -6,7 +6,7 @@ module Ungarbled
     config.ungarbled = ActiveSupport::OrderedOptions.new
 
     # Now only Japanese is supported
-    config.ungarbled.default_lang = :japanese
+    config.ungarbled.default_lang = :ja
 
     initializer 'ungarbled' do
       ::ActionController::Base.send :include, Ungarbled::ActionControllerExt
