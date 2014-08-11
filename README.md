@@ -2,7 +2,7 @@
 
 ![ungarbled](./readme/readme.png)
 
-`ungarbled` encodes multibyte filename correctly for certain platform. Rails integration included. Now only supporting Japanese (If you want another language to be supported, please refer `Extend Languages` on the bottom part of this page).
+`ungarbled` helps to encode multibyte filename correctly for certain platform. Rails integration included. Now only supporting Japanese (If you want another language to be supported, please refer [`Extend Languages`](#extend-languages) section).
 
 ## Rails ActionController integration
 
@@ -74,9 +74,9 @@ Rails.configuration.middleware.use Ungarbled::Middleware, lang: :japanese
 
 ## Extend Languages
 
-`ungarbled` authors are Japanese native, so not sure about other languages. But if you want ungarble objective download filenames in your language, please help us extending supporting language.
+`ungarbled` authors are Japanese native, so not sure about other languages. But if you want ungarble objective download filenames in your language, please help us extending supporting language. Pull Requests are always welcome!
 
-Please see `lib/ungarbled/encoder/japanese.rb` for reference, and just add encoder file in the same directory. Test is also required to be added to `test/encoder/yourlanguage_test.rb`
+Please see `lib/ungarbled/encoder/japanese.rb` for reference, and just add encoder file in the same directory. You can use [Browser](https://github.com/fnando/browser) instance with `@browser` for browser/platform detection. Test is also required to be added to `test/encoder/yourlanguage_test.rb`
 
 ## Future Plan
 
