@@ -26,7 +26,7 @@ class FilesController < ApplicationController
   def download
     send_file Rails.root.join('public', 'files', '日本語ファイル名.txt'),
               filename: encode_filename('日本語ファイル名.txt')
-    # Use "lang" option to override default language
+    # Use "lang" option to override `default_lang` config
     # encode_filename('日本語ファイル名.txt', lang: :japanese)
   end
 end
@@ -53,9 +53,12 @@ end
 
 Rack Middleware parses response and encodes filename automatically.
 
-### `config.ru`
+_This does not encode zip items' filenames_
+
 
 ```ruby
+# `config.ru`
+
 use Ungarbled::Middleware, lang: :japanese
 ```
 
