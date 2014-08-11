@@ -1,4 +1,4 @@
-# Ungarbled
+# Ungarbled [![Gem Version](https://badge.fury.io/rb/ungarbled.svg)](http://badge.fury.io/rb/ungarbled)
 
 ![ungarbled](./readme/readme.png)
 
@@ -74,7 +74,7 @@ Rails.configuration.middleware.use Ungarbled::Middleware, lang: :ja
 
 ## Extend Languages
 
-`ungarbled` authors are Japanese native, so not sure about other languages. But if you want ungarble objective download filenames in your language, please help us extending supporting language. Pull Requests are always welcome!
+`ungarbled` authors are Japanese native, so not sure about other languages. But if you want to ungarble download filenames in your language, please help us extending supporting language. Pull Requests are always welcome!
 
 Please see `lib/ungarbled/encoder/ja.rb` for reference, and just add encoder file in the same directory. You can use [Browser](https://github.com/fnando/browser) instance with `@browser` for browser/platform detection. Test is also required to be added to `test/encoder/yourlanguage_test.rb`
 
