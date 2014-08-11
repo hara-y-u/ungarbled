@@ -18,16 +18,12 @@ module Ungarbled
       status, headers, res = @app.call(env)
       disposition = headers[DISPOSITION_KEY]
 
-      if sending_file?(headers) && disposition
+      if disposition
         headers[DISPOSITION_KEY] =
           encode_disposition(encoder, disposition)
       end
 
       [status, headers, res]
-    end
-
-    def sending_file?(headers)
-      headers['Content-Transfer-Encoding'] = 'binary'
     end
 
     def encode_disposition(encoder, disposition)

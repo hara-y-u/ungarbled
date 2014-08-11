@@ -10,15 +10,13 @@ class DummyRackApp
     when '/download'
       [200, {
         'Content-Type' => 'application/octet-stream',
-        'Content-Disposition' => 'attachment; filename="filename.txt"',
-        'Content-Transfer-Encoding' => 'binary'
+        'Content-Disposition' => 'attachment; filename="filename.txt"'
        }, [BODY]
       ]
     when '/download_multibyte'
       [200, {
         'Content-Type' => 'application/octet-stream',
-        'Content-Disposition' => 'attachment; filename="日本語ファイル名.txt"',
-        'Content-Transfer-Encoding' => 'binary'
+        'Content-Disposition' => 'attachment; filename="日本語ファイル名.txt"'
        }, [BODY]
       ]
     end
