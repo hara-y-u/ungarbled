@@ -1,4 +1,4 @@
-# Ungarbled [![Gem Version](https://badge.fury.io/rb/ungarbled.svg)](http://badge.fury.io/rb/ungarbled) [![Build Status](https://api.shippable.com/projects/53e8bc2a00be167401ed2929/badge/master)](https://www.shippable.com/projects/53e8bc2a00be167401ed2929)
+# Ungarbled [![Gem Version](https://badge.fury.io/rb/ungarbled.svg)](http://badge.fury.io/rb/ungarbled) [![Codeship Status for yukihr/ungarbled](https://codeship.io/projects/02d09c20-038a-0132-b307-2245b76790d6/status)](https://codeship.io/projects/30462)
 
 ![ungarbled](./readme/readme.png)
 
