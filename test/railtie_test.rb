@@ -1,5 +1,19 @@
 require 'test_helper'
 
+# Configure Rails Environment
+ENV['RAILS_ENV'] = 'test'
+
+require File.expand_path('../dummy/config/environment.rb',  __FILE__)
+require 'rails/test_help'
+
+Rails.backtrace_cleaner.remove_silencers!
+
+# Capybara
+require 'minitest/rails/capybara'
+
+# Load support files
+Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
+
 class RailtieTest < Capybara::Rails::TestCase
   def test_included
     assert_includes(ActionController::Base.included_modules,
