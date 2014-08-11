@@ -80,6 +80,7 @@ Please see `lib/ungarbled/encoder/ja.rb` for reference, and just add encoder fil
 
 ## Future Plan
 
+* Middleware for Zip item
 * Automatic Language Detection
 
 ## Contributing
