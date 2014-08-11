@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '~> 1.9'
 
-  s.add_dependency 'browser', '~> 0.6'
+  s.add_dependency 'browser', '>= 0.4'
   s.add_dependency 'activesupport'
 
   s.add_development_dependency 'bundler', '>= 0'
