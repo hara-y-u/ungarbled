@@ -21,7 +21,14 @@ Configuration:
 Rails.configuration.ungarbled.default_lang = :ja
 ```
 
-Use `encode_filename` method within Controllers.
+`send_data` (with `:filename` option) and `send_file` (with `:filename` option or without `:url_based_filename` option) will send filename encoded for specific browsers. To disable this automatic encode, try:
+
+```ruby
+# config/initializers/ungarbled.rb
+Rails.configuration.ungarbled.disable_auto_encode = true
+```
+
+Even with this setting, you can still use `encode_filename` method within Controllers.
 
 ```ruby
 class FilesController < ApplicationController
@@ -65,6 +72,8 @@ use Ungarbled::Middleware, lang: :ja
 ```
 
 ### Rails
+
+_[Rails ActionController integration](#rails-ActionController-integration) is recommended._
 
 ```ruby
 # config/initializers/ungarbled.rb
