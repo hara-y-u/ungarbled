@@ -2,7 +2,7 @@
 
 ![ungarbled](./readme/readme.png)
 
-`ungarbled` encodes multibyte filename correctly for certain platform. Rails integration included. Now only supporting Japanese (If you want another language to be supported, please refer [`Extend Languages`](#extend-languages) section).
+`ungarbled` encodes multibyte filename correctly for certain platform. Rails integration included. Currently supporting only Japanese (If you want another language to be supported, please refer [`Extend Languages`](#extend-languages) section).
 
 ## Rails ActionController integration
 
