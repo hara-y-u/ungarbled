@@ -21,7 +21,9 @@ Configuration:
 Rails.configuration.ungarbled.default_lang = :ja
 ```
 
-`send_data` (with `:filename` option) and `send_file` (with `:filename` option or without `:url_based_filename` option) will send filename encoded for specific browsers. To disable this automatic encode, try:
+It's done!
+
+Now, `send_data` (with `:filename` option) and `send_file` (with `:filename` option or without `:url_based_filename` option) will send filename encoded for specific browsers. To disable this automatic encode, try:
 
 ```ruby
 # config/initializers/ungarbled.rb
