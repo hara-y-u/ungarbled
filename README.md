@@ -51,6 +51,7 @@ zipfile_name = Rails.root.join('tmp', 'multibyte_name_files.zip')
 
 Zip::File.open(, Zip::File::CREATE) do |zipfile|
   Dir[File.join(directory_to_zip, '**', '**')].each do |file|
+                # ungarble!!
     zipfile.add(encode_filename_for_zip_item(file.sub(directory_to_zip, '')),
                 file
                )
