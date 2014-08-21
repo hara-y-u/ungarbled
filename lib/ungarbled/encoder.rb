@@ -8,8 +8,9 @@ module Ungarbled
 
     def initialize(browser, options = {})
       @browser = browser
+      lang = options.delete(:lang) || :base
       @options = options
-      self.lang = options.delete(:lang) || :base
+      self.lang = lang
     end
 
     attr_accessor :lang, :delegate
