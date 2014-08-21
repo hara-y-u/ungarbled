@@ -2,7 +2,7 @@
 
 ![ungarbled](./readme/readme.png)
 
-`ungarbled` encodes multibyte filename correctly for certain platform. Rails integration included. Now only supporting Japanese (If you want another language to be supported, please refer [`Extend Languages`](#extend-languages) section).
+`ungarbled` encodes multibyte filename correctly for certain platform. Rails integration included. Currently supporting only Japanese (If you want another language to be supported, please refer [`Extend Languages`](#extend-languages) section).
 
 ## Rails ActionController integration
 
@@ -21,7 +21,9 @@ Configuration:
 Rails.configuration.ungarbled.default_lang = :ja
 ```
 
-`send_data` (with `:filename` option) and `send_file` (with `:filename` option or without `:url_based_filename` option) will send filename encoded for specific browsers. To disable this automatic encode, try:
+It's done!
+
+Now, `send_data` (with `:filename` option) and `send_file` (with `:filename` option or without `:url_based_filename` option) will send filename encoded for specific browsers. To disable this automatic encode, try:
 
 ```ruby
 # config/initializers/ungarbled.rb
@@ -51,6 +53,7 @@ zipfile_name = Rails.root.join('tmp', 'multibyte_name_files.zip')
 
 Zip::File.open(, Zip::File::CREATE) do |zipfile|
   Dir[File.join(directory_to_zip, '**', '**')].each do |file|
+                # ungarble!!
     zipfile.add(encode_filename_for_zip_item(file.sub(directory_to_zip, '')),
                 file
                )
