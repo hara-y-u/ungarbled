@@ -1,3 +1,5 @@
+require 'browser'
+
 module Ungarbled
   class Middleware
     DISPOSITION_KEY = 'Content-Disposition'
