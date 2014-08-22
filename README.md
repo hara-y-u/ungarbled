@@ -16,7 +16,7 @@ Add below to Gemfile.
 gem 'ungarbled'
 ```
 
-It's done!
+Then `bundle install`, and it's done!
 
 Now, `send_data` (with `:filename` option) and `send_file` (with `:filename` option or without `:url_based_filename` option) will send filename encoded for specific browsers. To disable this automatic encode, try:
 
@@ -51,11 +51,13 @@ or, pass `lang` option to `encode_filename`.
 class FilesController < ApplicationController
   def download
     send_file Rails.root.join('public', 'files', '日本語ファイル名.txt'),
+                        # this overrides `defalunt_lang` config
               filename: encode_filename('日本語ファイル名.txt', lang: :ja)
-              # this overrides `defalunt_lang` config
   end
 end
 ```
+
+#### Zip Support
 
 To encode Zip item filename, use `encode_filename_for_zip_item` with setting above config.
 
@@ -88,7 +90,7 @@ _This does not encode zip items' filenames_
 use Ungarbled::Middleware
 
 # for specific language:
-# use Ungarbled::Middleware, lang: :ja
+use Ungarbled::Middleware, lang: :ja
 ```
 
 ### Rails
