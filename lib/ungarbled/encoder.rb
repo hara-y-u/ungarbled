@@ -8,16 +8,15 @@ module Ungarbled
 
     def initialize(browser, options = {})
       @browser = browser
-      lang = options.delete(:lang) || :base
-      @options = options
-      self.lang = lang
+      @encoder_options = options.dup
+      self.lang = @encoder_options.delete(:lang) || :base
     end
 
     attr_accessor :lang, :delegate
 
     def lang=(lang)
       @delegate = "::Ungarbled::Encoder::#{lang.to_s.classify}"
-                  .constantize.send(:new, @browser, @options)
+                  .constantize.send(:new, @browser, @encoder_options)
       @lang = lang.to_sym
     rescue NameError
       raise NotImplementedError,

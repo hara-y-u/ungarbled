@@ -16,7 +16,7 @@ module Ungarbled
         ua: req.user_agent,
         accept_language: req.env['HTTP_ACCEPT_LANGUAGE']
       )
-      encoder = Ungarbled::Encoder.new(browser, @options.dup)
+      encoder = Ungarbled::Encoder.new(browser, @options)
       status, headers, res = @app.call(env)
       disposition = headers[DISPOSITION_KEY]
 
