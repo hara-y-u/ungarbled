@@ -13,6 +13,11 @@ class MiddlewareTest < MiniTest::Test
     get '/download_multibyte', {}, { 'HTTP_USER_AGENT' => 'MSIE' }
     assert_equal last_response.header['Content-Disposition'],
                  'attachment; filename="%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%90%8D.txt"'
+
+    # confirm second request
+    get '/download_multibyte', {}, { 'HTTP_USER_AGENT' => 'MSIE' }
+    assert_equal last_response.header['Content-Disposition'],
+                 'attachment; filename="%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%90%8D.txt"'
   end
 
   def test_not_encoding_filename
