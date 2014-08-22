@@ -6,11 +6,7 @@ module Ungarbled
       require 'erb'
 
       def encode(filename)
-        if @browser.ie?
-          ::ERB::Util.url_encode(filename)
-        else
-          super
-        end
+        super
       end
 
       def encode_for_zip_item(filename)

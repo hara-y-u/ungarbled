@@ -8,11 +8,11 @@ class EncoderTest < MiniTest::Test
   end
 
   def test_initialize_method
-    encoder = Ungarbled::Encoder.new(@browser, lang: :ja)
+    encoder = Ungarbled::Encoder.new(@browser)
     assert_respond_to encoder, :lang
     assert_respond_to encoder, :lang=
     assert_respond_to encoder, :delegate
-    assert_kind_of Ungarbled::Encoder::Ja, encoder.delegate
+    assert_kind_of Ungarbled::Encoder::Base, encoder.delegate
   end
 
   def test_initialize_method_fails_with_unimplemented_lang

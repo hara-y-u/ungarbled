@@ -2,7 +2,9 @@
 
 ![ungarbled](./readme/readme.png)
 
-`ungarbled` encodes multibyte filename correctly for certain platform. Rails integration included. Currently supporting only Japanese (If you want another language to be supported, please refer [`Extend Languages`](#extend-languages) section).
+`ungarbled` encodes multibyte filename correctly for certain platform. Rails integration included.
+
+_You can't see filenames in your language correctly encoded? Please refer [`Extend Languages`](#extend-languages) section._
 
 ## Rails ActionController integration
 
@@ -12,13 +14,6 @@ Add below to Gemfile.
 
 ```ruby
 gem 'ungarbled'
-```
-
-Configuration:
-
-```ruby
-# config/initializers/ungarbled.rb
-Rails.configuration.ungarbled.default_lang = :ja
 ```
 
 It's done!
@@ -37,13 +32,32 @@ class FilesController < ApplicationController
   def download
     send_file Rails.root.join('public', 'files', '日本語ファイル名.txt'),
               filename: encode_filename('日本語ファイル名.txt')
-    # Use "lang" option to override `default_lang` config
-    # encode_filename('日本語ファイル名.txt', lang: :ja)
   end
 end
 ```
 
-To encode Zip item filename, use `encode_filename_for_zip_item`.
+### Optional
+
+If you still can't see correct result, you may need encoding for specific language to be applied to filename, below configuration is required:
+
+```ruby
+# config/initializers/ungarbled.rb
+Rails.configuration.ungarbled.default_lang = :ja
+```
+
+or, pass `lang` option to `encode_filename`.
+
+```ruby
+class FilesController < ApplicationController
+  def download
+    send_file Rails.root.join('public', 'files', '日本語ファイル名.txt'),
+              filename: encode_filename('日本語ファイル名.txt', lang: :ja)
+              # this overrides `defalunt_lang` config
+  end
+end
+```
+
+To encode Zip item filename, use `encode_filename_for_zip_item` with setting above config.
 
 ```ruby
 # Example with rubyzip
@@ -71,7 +85,10 @@ _This does not encode zip items' filenames_
 ```ruby
 # `config.ru`
 
-use Ungarbled::Middleware, lang: :ja
+use Ungarbled::Middleware
+
+# for specific language:
+# use Ungarbled::Middleware, lang: :ja
 ```
 
 ### Rails
@@ -81,14 +98,17 @@ _[Rails ActionController integration](#rails-ActionController-integration) is re
 ```ruby
 # config/initializers/ungarbled.rb
 
+Rails.configuration.middleware.use Ungarbled::Middleware
+
+# for specific language:
 Rails.configuration.middleware.use Ungarbled::Middleware, lang: :ja
 ```
 
 ## Extend Languages
 
-`ungarbled` authors are Japanese native, so not sure about other languages. But if you want to fix garbled download filenames in your language, please help us extending supporting language. Pull Requests are always welcome!
+`ungarbled` authors are Japanese native, so not sure about other languages. But if you want to fix garbled download filenames in your language, please help us extending supporting language. Pull Requests are welcome!
 
-Please see `lib/ungarbled/encoder/ja.rb` for reference, and just add encoder file in the same directory. You can use [Browser](https://github.com/fnando/browser) instance with `@browser` for browser/platform detection. Test is also required to be added to `test/encoder/yourlanguage_test.rb`
+Please see `lib/ungarbled/encoder/ja.rb` for reference, and just add your encoder file in the same directory. You can use [Browser](https://github.com/fnando/browser) instance with `@browser` for browser/platform detection. Test is also required to be added to `test/encoder/yourlanguage_test.rb`
 
 ## Future Plan
 

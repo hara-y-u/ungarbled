@@ -22,12 +22,12 @@ class FilesController < ApplicationController
   end
 
   def download_with_changing_lang
-    filename = encode_filename('日本語ファイル名.txt',
-                               lang: :ja
-                              )
+    _filename = encode_filename('日本語ファイル名.txt',
+                                lang: :ja
+                               )
 
     filename_changed = encode_filename('日本語ファイル名.txt',
-                                       lang: :base
+                                       lang: :no_effect
                                       )
 
     send_data 'abcde',

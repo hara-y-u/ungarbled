@@ -12,6 +12,12 @@ Rails.backtrace_cleaner.remove_silencers!
 # Capybara
 require 'minitest/rails/capybara'
 
+# Encoder for test
+class Ungarbled::Encoder::NoEffect < Ungarbled::Encoder::Base
+  def encode(filename); filename; end
+  def encode_for_zip_item(filename); filename; end
+end
+
 # Load support files
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
