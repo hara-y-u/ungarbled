@@ -1,6 +1,8 @@
 module Ungarbled
   class Encoder
     class Base
+      require 'erb'
+
       def initialize(browser, options = {})
         @browser = browser
         @options = options
