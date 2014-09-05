@@ -1,6 +1,6 @@
-# -*- encoding: utf-8 -*-
 require 'test_helper'
 require 'browser'
+require 'ungarbled/encoder'
 
 class EncoderTest < MiniTest::Test
   def setup
