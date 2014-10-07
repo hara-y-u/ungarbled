@@ -29,8 +29,6 @@ module Ungarbled
       filename_encoder(options).encode_for_zip_item(filename)
     end
 
-    private
-
     def send_file_headers_with_encode_filename!(options)
       if !::Rails.configuration.ungarbled.disable_auto_encode &&
          options[:filename]
