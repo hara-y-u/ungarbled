@@ -23,10 +23,9 @@ Gem::Specification.new do |s|
   s.add_dependency 'browser', '>= 0.4'
   s.add_dependency 'activesupport'
 
+  s.add_development_dependency 'appraisal'
   s.add_development_dependency 'bundler', '>= 0'
-  s.add_development_dependency 'rake'
-  s.add_development_dependency 'rails', '~> 4'
+  s.add_development_dependency 'rails', '>= 4.0.0'
   s.add_development_dependency 'rack-test'
-  s.add_development_dependency 'pry-meta'
-  s.add_development_dependency 'minitest-rails-capybara'
+  s.add_development_dependency 'minitest-capybara'
 end
