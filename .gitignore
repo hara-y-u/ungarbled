@@ -4,3 +4,4 @@ pkg/
 Gemfile.lock
 /test/dummy/log/test.log
 /ungarbled-*.gem
+/gemfiles/*.lock
