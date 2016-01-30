@@ -1,4 +1,4 @@
-# Ungarbled [![Circle CI](https://circleci.com/gh/yukihr/ungarbled.svg?style=svg)](https://circleci.com/gh/yukihr/ungarbled) [![Dependency Status](https://gemnasium.com/yukihr/ungarbled.svg)](https://gemnasium.com/yukihr/ungarbled) [![Gem Version](https://badge.fury.io/rb/ungarbled.svg)](http://badge.fury.io/rb/ungarbled)
+# Ungarbled [![Build Status](https://travis-ci.org/yukihr/ungarbled.svg?branch=master)](https://travis-ci.org/yukihr/ungarbled) [![Dependency Status](https://gemnasium.com/yukihr/ungarbled.svg)](https://gemnasium.com/yukihr/ungarbled) [![Gem Version](https://badge.fury.io/rb/ungarbled.svg)](http://badge.fury.io/rb/ungarbled)
 
 ![ungarbled](./readme/readme.png)
 
