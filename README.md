@@ -1,4 +1,4 @@
-# Ungarbled [![Codeship Status for yukihr/ungarbled](https://codeship.io/projects/02d09c20-038a-0132-b307-2245b76790d6/status)](https://codeship.io/projects/30462) [![Dependency Status](https://gemnasium.com/yukihr/ungarbled.svg)](https://gemnasium.com/yukihr/ungarbled) [![Gem Version](https://badge.fury.io/rb/ungarbled.svg)](http://badge.fury.io/rb/ungarbled)
+# Ungarbled [![Circle CI](https://circleci.com/gh/yukihr/ungarbled.svg?style=svg)](https://circleci.com/gh/yukihr/ungarbled) [![Dependency Status](https://gemnasium.com/yukihr/ungarbled.svg)](https://gemnasium.com/yukihr/ungarbled) [![Gem Version](https://badge.fury.io/rb/ungarbled.svg)](http://badge.fury.io/rb/ungarbled)
 
 ![ungarbled](./readme/readme.png)
 
