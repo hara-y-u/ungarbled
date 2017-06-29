@@ -9,7 +9,6 @@ module Ungarbled
     included do
       helper_method :encode_filename
       helper_method :encode_filename_for_zip_item
-      alias_method_chain :send_file_headers!, :encode_filename
     end
 
     private
@@ -29,12 +28,20 @@ module Ungarbled
       filename_encoder(options).encode_for_zip_item(filename)
     end
 
-    def send_file_headers_with_encode_filename!(options)
+    def send_file_headers!(options)
       if !::Rails.configuration.ungarbled.disable_auto_encode &&
          options[:filename]
         options[:filename] = encode_filename(options[:filename])
       end
       send_file_headers_without_encode_filename!(options)
+    end
+  end
+end
+
+module ActionController
+  module DataStreaming
+    class << self
+      prepend Ungarbled::ActionControllerExt
     end
   end
 end
