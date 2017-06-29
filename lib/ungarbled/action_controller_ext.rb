@@ -37,11 +37,3 @@ module Ungarbled
     end
   end
 end
-
-module ActionController
-  module DataStreaming
-    class << self
-      prepend Ungarbled::ActionControllerExt
-    end
-  end
-end

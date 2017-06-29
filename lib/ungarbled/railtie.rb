@@ -1,5 +1,5 @@
 require 'rails/railtie'
-require 'ungarbled/action_controller_ext'
+require 'ungarbled/action_controller'
 
 module Ungarbled
   class Railtie < Rails::Railtie
