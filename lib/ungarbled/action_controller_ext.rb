@@ -9,6 +9,13 @@ module Ungarbled
     included do
       helper_method :encode_filename
       helper_method :encode_filename_for_zip_item
+      alias_method :send_file_headers_with_encode_filename!, :send_file_headers!
+      alias_method_chain :send_file_headers!, :encode_filename
+    end
+
+    def self.prepended(mod)
+      mod.helper_method :encode_filename
+      mod.helper_method :encode_filename_for_zip_item
     end
 
     private
@@ -33,7 +40,12 @@ module Ungarbled
          options[:filename]
         options[:filename] = encode_filename(options[:filename])
       end
-      send_file_headers_without_encode_filename!(options)
+
+      if defined?(send_file_headers_without_encode_filename!)
+        send_file_headers_without_encode_filename!(options)
+      else
+        super
+      end
     end
   end
 end
