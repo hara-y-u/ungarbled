@@ -13,7 +13,7 @@ module Ungarbled
     def call(env)
       req = Rack::Request.new(env)
       browser = Browser.new(
-        ua: req.user_agent,
+        req.user_agent,
         accept_language: req.env['HTTP_ACCEPT_LANGUAGE']
       )
       encoder = Ungarbled::Encoder.new(browser, @options)
