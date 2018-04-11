@@ -9,7 +9,11 @@ module Ungarbled
     config.ungarbled.default_lang = :ja
 
     initializer 'ungarbled' do
-      ::ActionController::Base.send :include, Ungarbled::ActionControllerExt
+      if defined?(Module.prepend)
+        ::ActionController::Base.send :prepend, Ungarbled::ActionControllerExt
+      else
+        ::ActionController::Base.send :include, Ungarbled::ActionControllerExt
+      end
     end
   end
 end
