@@ -4,7 +4,12 @@ require 'ungarbled/encoder'
 
 class EncoderTest < MiniTest::Test
   def setup
-    @browser = Browser.new(ua: 'Safari')
+    @browser =
+      if Browser.method(:new).parameters.flatten.count == 1
+        ::Browser.new(ua: 'Safari')
+      else
+        ::Browser.new('Safari')
+      end
   end
 
   def test_initialize_method
