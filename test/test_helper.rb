@@ -1,2 +1,0 @@
-# Minitest
-require 'minitest/autorun'
