@@ -1,0 +1,40 @@
+name: Ruby CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby-version:
+        - '2.1'
+        - '2.2'
+        - '2.3'
+        - '2.6'
+        - '2.7'
+        gemfile:
+        - 'gemfiles/rails_4.gemfile'
+        - 'gemfiles/rails_5.gemfile'
+        exclude:
+          - ruby-version: '1.9.3'
+            gemfile: 'gemfiles/rails_5.gemfile'
+    
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby-version }}
+
+    - name: Update Bundler
+      run: gem update bundler
+
+    - name: Install dependencies
+      run: |
+        BUNDLE_GEMFILE=${{ matrix.gemfile }} bundle install
+
+    - name: Run tests
+      run: |
+        BUNDLE_GEMFILE=${{ matrix.gemfile }} bundle exec rake
